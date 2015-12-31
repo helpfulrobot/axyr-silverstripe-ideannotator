@@ -30,4 +30,4 @@ class DataObjectAnnotatorTest_Team extends DataObject implements TestOnly
     );
 }
 
-Config::inst()->update('DataObjectAnnotatorTest_Team' , 'extensions', array('DataObjectAnnotatorTest_Team_Extension'));
+Config::inst()->update('DataObjectAnnotatorTest_Team', 'extensions', array('DataObjectAnnotatorTest_Team_Extension'));

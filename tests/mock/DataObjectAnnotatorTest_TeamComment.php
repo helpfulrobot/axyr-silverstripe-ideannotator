@@ -11,5 +11,4 @@ class DataObjectAnnotatorTest_TeamComment extends DataObject implements TestOnly
     private static $has_one = array(
         'Team' => 'DataObjectAnnotatorTest_Team'
     );
-
 }

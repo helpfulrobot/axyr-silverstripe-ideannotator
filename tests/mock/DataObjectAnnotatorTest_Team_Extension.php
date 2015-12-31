@@ -1,6 +1,7 @@
 <?php
 
-class DataObjectAnnotatorTest_Team_Extension extends DataExtension implements TestOnly {
+class DataObjectAnnotatorTest_Team_Extension extends DataExtension implements TestOnly
+{
 
     private static $db = array(
         'ExtendedVarcharField' => 'Varchar',

@@ -20,9 +20,9 @@ class DataObjectAnnotatorTask extends BuildTask
 
         /* @var $annotator DataObjectAnnotator */
         $annotator = DataObjectAnnotator::create();
-        if($className) {
+        if ($className) {
             $annotator->annotateDataObject($className, $undo);
-        }elseif($moduleName) {
+        } elseif ($moduleName) {
             $annotator->annotateModule($moduleName, $undo);
         }
     }

@@ -181,7 +181,6 @@ class DataObjectAnnotator extends Object
     protected function classNameIsAllowed($className)
     {
         if (is_subclass_of($className, 'DataObject') || is_subclass_of($className, 'DataExtension')) {
-
             $filePath = $this->getClassFilePath($className);
             $allowedModules = Config::inst()->get('DataObjectAnnotator', 'enabled_modules');
 
@@ -307,15 +306,16 @@ class DataObjectAnnotator extends Object
      *
      * @param string $className
      */
-    protected function generateORMOwnerProperties($className) {
+    protected function generateORMOwnerProperties($className)
+    {
         $owners = array();
-        foreach($this->objectList as $class) {
+        foreach ($this->objectList as $class) {
             $config = Config::inst()->get($class, 'extensions', Config::UNINHERITED);
-            if($config !== null && in_array($className, Config::inst()->get($class, 'extensions', Config::UNINHERITED), null)) {
+            if ($config !== null && in_array($className, Config::inst()->get($class, 'extensions', Config::UNINHERITED), null)) {
                 $owners[] = $class;
             }
         }
-        if(count($owners)) {
+        if (count($owners)) {
             $this->resultString .= ' * @property ';
             foreach ($owners as $key => $owner) {
                 if ($key > 0) {

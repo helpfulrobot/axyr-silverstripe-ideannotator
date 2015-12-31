@@ -14,7 +14,7 @@ class Annotatable extends DataExtension
         $annotator->annotateDataObject($this->owner->ClassName);
 
         if ($extensions = Config::inst()->get($this->owner->ClassName, 'extensions', Config::UNINHERITED)) {
-            foreach($extensions as $extension) {
+            foreach ($extensions as $extension) {
                 $annotator->annotateDataObject($extension);
             }
         }
